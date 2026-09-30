@@ -37,7 +37,7 @@
   }
 
   /* ---------- Typing effect ---------- */
-  const roles = ["Developer", "Designer", "Creative Technologist", "Problem Solver"];
+  const roles = ["Software Engineer", "Cloud Data Engineer", "AI / ML Builder"];
   const typed = $("#typed");
   function startTyping() {
     if (reduceMotion) { typed.textContent = roles[0]; return; }
@@ -53,6 +53,17 @@
     };
     setTimeout(step, 900);
   }
+
+  /* ---------- Stem separation equalizer bars ---------- */
+  $$(".bars").forEach((bars) => {
+    const count = 28;
+    for (let i = 0; i < count; i++) {
+      const bar = document.createElement("i");
+      bar.style.setProperty("--h", (0.3 + Math.random() * 0.7).toFixed(2));
+      bar.style.animationDelay = (-Math.random() * 1.5).toFixed(2) + "s";
+      bars.appendChild(bar);
+    }
+  });
 
   /* ---------- Scroll reveal ---------- */
   function observeReveals() {
